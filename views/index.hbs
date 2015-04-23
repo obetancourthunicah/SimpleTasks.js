@@ -1,2 +1,29 @@
 <h1>{{title}}</h1>
-<p>Welcome to {{title}}</p>
+<div>
+  <form id="newTask" action="addtask" method="post">
+    <label for="task">Add new task</label>
+    <input type="text" id="task" name="task" placeholder="New Task Here"/>
+    <a href class="btn" onclick="document.getElementById('newTask').submit();return false;">Add Task</a>
+  </form>
+</div>
+{{#if taskList}}
+  <div class="taskList">
+    <ol>
+      {{#each taskList}}
+        <li><h4>{{task}}</h4>
+          <form action="/addcomment/{{_id}}" method="post" id="task_{{_id}}" class="cmtForm">
+            <input type="text" id="comment" name="comment" placeholder="New Comment">
+            <a href class="btn" onclick="document.getElementById('task_{{_id}}').submit();return false;">Add</a>
+          </form>
+          {{#if comments}}
+            <ul class="cmtList">
+              {{#each comments}}
+                <li>{{detail}}<a href="/likecomment/{{../_id}}/{{@index}}" class="bubbles">Likes {{likes}}</a></li>
+              {{/each}}
+            </ul>
+          {{/if}}
+        </li>
+      {{/each}}
+    </ol>
+  </div>
+{{/if}}

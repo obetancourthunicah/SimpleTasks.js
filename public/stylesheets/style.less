@@ -1,8 +1,79 @@
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  padding:0px;
+  margin:0px;
+  font: 16px "Lucida Grande", Helvetica, Arial, sans-serif;
+  min-width:700px;
 }
-
+h1{
+  padding:0.5em 2em;
+}
 a {
   color: #00B7FF;
+}
+
+form{
+  padding:1em 2em;
+  background-color:#DDD;
+  text-align:center;
+}
+input[type="text"]{
+  border-style:solid;
+  padding:0.8em;
+  border-radius:0.4em;
+  font-size:1em;
+  min-width:24em;
+}
+
+.btn{
+  display:inline-block;
+  background-color:#FFF;
+  border: 0.125em solid #00B7FF;
+  padding:0.8em;
+  border-radius:0.4em;
+}
+.taskList{
+  margin:1em auto;
+  max-width:920px;
+}
+.cmtList{
+  position:relative;
+  list-style:none;
+}
+.cmtList>li{
+  position:relative;
+  font-size:0.9em;
+  padding:1em;
+}
+.cmtList li:nth-child(odd){
+  background-color:#eee;
+}
+.cmtList .bubbles{
+  display:block;
+  box-sizing:border-box;
+  -moz-box-sizing:border-box;
+  position:absolute;
+  right:4em;
+  top:1em;
+  border:1px solid black;
+  border-radius:5px;
+  padding:0.6em 1em;
+  font-size:0.6em;
+}
+.cmtForm{
+  background-color:white;
+  font-size:0.8em;
+}
+.cmtForm input[type="text"]{
+  display:inline-block;
+  margin:0.5em auto;
+  font-size:0.8em;
+  border-color:#eee;
+  width:80%;
+}
+.cmtForm .btn{
+  display:inline-block;
+  margin:0px 0px 0px auto;
+  min-width:10%;
+  border:none;
+  text-align:right;
 }
